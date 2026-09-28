@@ -1,6 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 
 var app = builder.Build();
+
+
+app.MapGet("/", () => "Hello Cloud Run");
+
+app.Run($"http://0.0.0.0:{port}");
 
 // Dữ liệu lưu tạm trong RAM, không dùng database
 var items = new List<Item>
@@ -42,3 +48,5 @@ app.Run();
 record Item(int Id, string Name);
 
 record CreateItemRequest(string Name);
+
+
