@@ -9,6 +9,11 @@ app.get("/get-user"
         res.send("HELLO serverless AWS !!")
     })
 
+app.get("/get-demo"
+    , (req, res) => {
+        res.send("HELLO DEMOOOOOOOOOO!!")
+    })
+
 
 app.post("/create-user"
     , (req, res) => {
