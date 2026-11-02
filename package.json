@@ -1,0 +1,17 @@
+{
+  "name": "back_end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^9.4.0",
+    "@google-cloud/storage": "^8.4.0",
+    "express": "^5.1.0",
+    "google-auth-library": "^11.3.2",
+    "multer": "^2.0.2"
+  }
+}
