@@ -1,0 +1,23 @@
+services:
+  be:
+    build: ./back_end
+    image: pinterest-be
+    container_name: pinterest-be
+    ports:
+      - "8088:8088"
+    environment:
+      GOOGLE_KEY_FILE: /run/secrets/service-account.json
+    volumes:
+      # Key is mounted at runtime, never baked into the image
+      - ./back_end/service-account.json:/run/secrets/service-account.json:ro
+    restart: unless-stopped
+
+  fe:
+    build: ./front_end
+    image: pinterest-fe
+    container_name: pinterest-fe
+    ports:
+      - "8000:80"
+    depends_on:
+      - be
+    restart: unless-stopped
