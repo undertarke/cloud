@@ -1,7 +1,6 @@
 services:
   be:
     build: ./back_end
-    image: pinterest-be
     container_name: pinterest-be
     ports:
       - "8088:8088"
@@ -14,7 +13,6 @@ services:
 
   fe:
     build: ./front_end
-    image: pinterest-fe
     container_name: pinterest-fe
     ports:
       - "8000:80"
