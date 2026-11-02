@@ -46,7 +46,5 @@ app.post("/upload", upload.single("image"), async (req, res) => {
 
 })
 
-const port = process.env.PORT || 8088;
-app.listen(port, '0.0.0.0', () =>
-    console.log('Listening on', port)
-);
+const port = process.env.PORT || 8080
+app.listen(port, () => console.log(`Listening on ${port}`))
